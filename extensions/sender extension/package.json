@@ -1,0 +1,25 @@
+{
+  "name": "sender-fetch-custom-extension",
+  "version": "1.0.0",
+  "description": "This custom extension gets list of verified senders from SendGrid",
+  "main": "gulpfile.js",
+  "scripts": {
+    "build": "gulp build",
+    "lint": "eslint --fix --ext .js ."
+  },
+  "author": "Contentstack",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "depcheck": "^1.3.1",
+    "eslint": "^7.19.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1",
+    "gulp": "4.0.0",
+    "gulp-babel": "7.0.1",
+    "gulp-eslint": "^6.0.0",
+    "gulp-inline": "0.1.3",
+    "gulp-minify-css": "1.2.4",
+    "gulp-uglify": "3.0.0"
+  }
+}

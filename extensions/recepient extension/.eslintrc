@@ -1,0 +1,16 @@
+{
+  "extends": ["airbnb-base"],
+  "rules": {
+    "no-restricted-syntax": ["error", "LabeledStatement", "WithStatement"],
+    "no-plusplus": 0,
+    "no-unused-vars": 0,
+    "no-empty": 0,
+    "max-len": 0,
+    "no-array-constructor": 0,
+    "no-use-before-define": 0,
+    "no-undef": 0,
+    "no-console": 0,
+    "array-callback-return": 0,
+    "consistent-return": 0
+  }
+}
