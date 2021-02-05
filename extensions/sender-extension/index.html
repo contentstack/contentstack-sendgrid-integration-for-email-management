@@ -1,29 +1,24 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8">
     <title>SendGrid Sender Extension</title>
-
     <link href="https://www.contentstack.com/sdks/contentstack-ui-extensions/dist/1.1.0/ui-extension-sdk.css" rel="stylesheet" type="text/css" media="all">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://assets.contentstack.io/v3/assets/bltd1343376dfba54d2/blt87d67698547696b1/5bbdf8591ecf66190c1b9dd5/selectize.bootstrap3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/css/selectize.bootstrap3.css">
     <style>
 .selectize-control.multi .selectize-input>div.item{background-color:#d1dfe2;color:#748590;padding:4px;border-radius:3px;border:1px solid #e8eced}.selectize-control.multi .selectize-input.has-items{border-radius:3px;background-clip:padding-box}.selectize-dropdown,.selectize-input.focus{border-color:#eee;box-shadow:none;font-size:13px;color:#748590;background-color:#f7fbfc}.selectize-input{width:100%;font-size:13px;border:1px solid #eee;padding:5px;border-radius:2px}::placeholder{color:#aabac4;font-size:13px}#select-tools-selectized{min-width:127px;text-overflow:ellipsis}.selectize-dropdown .active{background:#f5f5f5;cursor:pointer}.selectize-control.plugin-remove_button [data-value] .remove{margin:3px;font-size:0!important;color:#000;text-shadow:0 1px 0 #fff;opacity:.2}.selectize-control.plugin-remove_button [data-value] .remove:hover{background-color:#d1dfe2;color:#000;text-decoration:none;cursor:pointer;opacity:.5}.selectize-dropdown .option:hover{background:#f5f5f5}.selectize-control.plugin-remove_button [data-value] .remove::before{content:"\f00d";font-size:15px;position:relative;font-family:FontAwesome,Helvetica,Arial,Verdana,Tahoma,sans-serif}.selectize-dropdown-content{max-height:none}
 </style>
     <script src="https://www.contentstack.com/sdks/contentstack-ui-extensions/dist/1.1.0/ui-extension-sdk.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.x-git.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="https://assets.contentstack.io/v3/assets/bltd1343376dfba54d2/blta4c5a4f8fbfa58fb/5bbc6b9ca50786140c1fde33/selectize.min.js"></script>
-    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/js/standalone/selectize.min.js"></script>
+  </head>
 
-</head>
-
-<body>
+  <body>
     <select id="select-tools"></select>
     <script>
 "use strict";var _createClass=function(){function o(e,t){for(var n=0;n<t.length;n++){var o=t[n];o.enumerable=o.enumerable||!1,o.configurable=!0,"value"in o&&(o.writable=!0),Object.defineProperty(e,o.key,o)}}return function(e,t,n){return t&&o(e.prototype,t),n&&o(e,n),e}}();function _classCallCheck(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var extensionField=void 0,senders=[],calculateHeight=function(){var e=document.body,t=document.documentElement,n=Math.max(e.scrollHeight,e.offsetHeight,t.clientHeight,t.scrollHeight,t.offsetHeight);extensionField.window.updateHeight(n)},SendGrid=function(){function e(){_classCallCheck(this,e)}return _createClass(e,[{key:"getData",value:function(){var o=void 0;return new Promise(function(t,n){fetch(extensionField.config.baseUrl+"v3/verified_senders",{method:"get",headers:{Authorization:""+extensionField.config.apiKey,"Content-Type":"application/json"}}).then(function(e){return o=e.status,e.json()}).then(function(e){if(200===o)return t(e);throw Error("Failed to fetch resource")}).catch(function(e){n(e)})})}}]),e}(),domChangeListener=function(o){var t=void 0;$("#select-tools").on("change",function(){t=$("#select-tools").val();var n=[],e=[];return null!==n&&(e.push(t),e.forEach(function(t){o.forEach(function(e){t===e.name&&n.push(e)})})),extensionField.field.setData(n)}),$(".selectize-control").on("click",function(){calculateHeight()})},calculateDomHeight=function(){var e=$(".selectize-control").outerHeight()+$(".selectize-dropdown ").height();extensionField.window.updateHeight(e)},render=function(e){var t=extensionField.field.getData(),n=[];0!==Object.keys(t).length&&t.forEach(function(e){n.push(e.name)}),$("#select-tools").selectize({plugins:["remove_button"],maxItems:"1",valueField:"name",labelField:"name",searchField:"name",options:e,create:!1,items:n,hideSelected:!0,render:{item:function(e,t){return'<div class="item">'+e.email+'<a href="javascript:void(0)" class="remove" tabindex="-1" title="Remove">×</a></div>'},option:function(e,t){return'<div class="option">'+e.email+"</div>"}},onFocus:function(){calculateHeight(),$("#select-tools-selectized").attr("placeholder","Start typing to search")},onBlur:function(){0===$(".option").length?$("#select-tools-selectized").attr("placeholder"," "):$("#select-tools-selectized").attr("placeholder","Click to select options");var e=$(".selectize-control").outerHeight();extensionField.window.updateHeight(e)},onInitialize:function(){0===n.length?$("#select-tools-selectized").attr("placeholder","Click to select options"):n.length===senders.length?$("#select-tools-selectized").attr("placeholder"," "):$("#select-tools-selectized").attr("placeholder","Click to select options");var e=$(".selectize-control").outerHeight();extensionField.window.updateHeight(e)},onDropdownOpen:function(){calculateDomHeight()},onItemAdd:function(){0===$(".option").length?$("#select-tools-selectized").attr("placeholder"," "):$("#select-tools-selectized").attr("placeholder","Start typing to search")},onItemRemove:function(){$("#select-tools-selectized").attr("placeholder","Start typing to search"),calculateDomHeight()}}),domChangeListener(e)};$(document).ready(function(){ContentstackUIExtension.init().then(function(e){new SendGrid((extensionField=e).config).getData().then(function(e){var t=[];e.results.map(function(e){t.push({id:e.id,email:e.from_email,name:e.from_name,nickname:e.nickname})}),render(t)})})});
 </script>
-</body>
-
+  </body>
 </html>
