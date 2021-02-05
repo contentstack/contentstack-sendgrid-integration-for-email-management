@@ -12,4 +12,4 @@ Add content
 
 Read Contentstack [docs](https://www.contentstack.com/docs/)
 
-Read Guide [Validating Modular Blocks using Contentstack Webhooks and AWS Lambda](#)
+Read Guide [Contentstack SendGrid Integration For Email Management](#)
