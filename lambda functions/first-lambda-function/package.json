@@ -1,0 +1,16 @@
+{
+  "name": "first-lambda-function-sendgrid",
+  "version": "1.0.0",
+  "description": "This function lets you create a single send email campaign in SendGrid.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Contentstack",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "html-minifier": "^4.0.0",
+    "html-minify": "^0.3.2"
+  }
+}
