@@ -23,7 +23,6 @@ gulp.task('build', () => gulp
   )
   .pipe(gulp.dest('./')));
 
-gulp.task('build', gulp.series('lint-js'));
 
 gulp.task('watch', () => {
   gulp.watch('src/*', gulp.series('build'));
