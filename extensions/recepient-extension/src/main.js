@@ -17,7 +17,6 @@ const calculateHeight = () => {
 
 class SendGrid {
   getRecipientList() {
-    const request = this;
     let statusCode;
     return new Promise((resolve, reject) => {
       fetch(`${extensionField.config.baseUrl}v3/marketing/lists`, {

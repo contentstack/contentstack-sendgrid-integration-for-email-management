@@ -11,7 +11,6 @@ const calculateHeight = () => {
 
 class SendGrid {
   getData() {
-    const request = this;
     let statusCode;
     return new Promise((resolve, reject) => {
       fetch(`${extensionField.config.baseUrl}v3/verified_senders`, {

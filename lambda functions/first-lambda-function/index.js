@@ -147,7 +147,6 @@ const updateHandler = async (eventData) => {
 
 exports.handler = async (event) => {
   let body = JSON.parse(event.body);
-  let apiKey = body.api_key;
   try {
     contentstackAxios.interceptors.request.use(
       (config) => {
@@ -161,7 +160,7 @@ exports.handler = async (event) => {
       }
     );
     if (body.data.entry.single_send_id === "" || body.data.entry.single_send_id === null) {
-      await mainHandler(body, apiKey);
+      await mainHandler(body);
       return {
         statusCode: 200,
         body: JSON.stringify({
