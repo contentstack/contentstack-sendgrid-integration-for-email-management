@@ -5,13 +5,7 @@ const calculateHeight = () => {
   const { body } = document;
   const html = document.documentElement;
 
-  const height = Math.max(
-    body.scrollHeight,
-    body.offsetHeight,
-    html.clientHeight,
-    html.scrollHeight,
-    html.offsetHeight,
-  );
+  const height = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight);
   extensionField.window.updateHeight(height);
 };
 
@@ -104,36 +98,22 @@ const render = (data) => {
     },
     onFocus: () => {
       calculateHeight();
-      $('#select-tools-selectized').attr(
-        'placeholder',
-        'Start typing to search',
-      );
+      $('#select-tools-selectized').attr('placeholder', 'Start typing to search');
     },
     onBlur: () => {
       if ($('.option').length === 0) {
         $('#select-tools-selectized').attr('placeholder', ' ');
       } else {
-        $('#select-tools-selectized').attr(
-          'placeholder',
-          'Click to select options',
-        );
+        $('#select-tools-selectized').attr('placeholder', 'Click to select options');
       }
       const elHeight = $('.selectize-control').outerHeight();
       extensionField.window.updateHeight(elHeight);
     },
     onInitialize: () => {
-      if (selectedValues.length === 0) {
-        $('#select-tools-selectized').attr(
-          'placeholder',
-          'Click to select options',
-        );
-      } else if (selectedValues.length === recipientList.length) {
+      if (selectedValues.length === recipientList.length) {
         $('#select-tools-selectized').attr('placeholder', ' ');
       } else {
-        $('#select-tools-selectized').attr(
-          'placeholder',
-          'Click to select options',
-        );
+        $('#select-tools-selectized').attr('placeholder', 'Click to select options');
       }
       const elHeight = $('.selectize-control').outerHeight();
       extensionField.window.updateHeight(elHeight);
@@ -145,17 +125,11 @@ const render = (data) => {
       if ($('.option').length === 0) {
         $('#select-tools-selectized').attr('placeholder', ' ');
       } else {
-        $('#select-tools-selectized').attr(
-          'placeholder',
-          'Start typing to search',
-        );
+        $('#select-tools-selectized').attr('placeholder', 'Start typing to search');
       }
     },
     onItemRemove: () => {
-      $('#select-tools-selectized').attr(
-        'placeholder',
-        'Start typing to search',
-      );
+      $('#select-tools-selectized').attr('placeholder', 'Start typing to search');
       calculateDomHeight();
     },
   });
