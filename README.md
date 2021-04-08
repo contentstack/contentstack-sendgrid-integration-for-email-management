@@ -9,7 +9,7 @@ They help the marketing and sales teams in marketing campaigns, product updates,
 
 # Tutorial
 
-In this guide, we will discuss how we can integrate Contentstack with SendGrid to manage emails. We'll use Contentstack as the backend for writing the content our email and integrate it with SendGrid to send email our customers.
+In this guide, we will discuss how we can integrate Contentstack with SendGrid to manage emails. We'll use Contentstack as the backend for writing the content of our email and integrate it with SendGrid to send email to our customers.
 
 # Documentation
 
