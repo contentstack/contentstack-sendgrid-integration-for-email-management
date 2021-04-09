@@ -1,0 +1,21 @@
+{
+  "name": "create-template-lambda-function",
+  "version": "1.0.0",
+  "description": "This function lets you create a single send email campaign in SendGrid.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint --fix --ext .js ."
+  },
+  "author": "Contentstack",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "eslint-plugin-import": "^2.22.1",
+    "html-minifier": "^4.0.0",
+    "html-minify": "^0.3.2"
+  },
+  "devDependencies": {
+    "eslint": "^7.20.0"
+  }
+}
