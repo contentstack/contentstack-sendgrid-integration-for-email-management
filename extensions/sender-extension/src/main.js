@@ -41,7 +41,7 @@ const domChangeListener = (data) => {
     fieldValue = $('#select-tools').val();
     const fieldValues = [];
     const selectedVal = [];
-    if (fieldValues !== null) {
+    if (fieldValues != null) {
       selectedVal.push(fieldValue);
       selectedVal.forEach((value) => {
         data.forEach((element) => {
