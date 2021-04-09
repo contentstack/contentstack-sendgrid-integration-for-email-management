@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint --fix --ext .js .",
-    "zip": "zip -r stage-update-function.zip *.json *.js node_modules"
+    "build": "zip -r stage-update-function.zip *.json *.js node_modules"
   },
   "author": "Contentstack",
   "license": "MIT",

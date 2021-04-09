@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint --fix --ext .js .",
-    "zip": "zip -r create-template-function.zip *.json *.js node_modules template "
+    "build": "zip -r create-template-function.zip *.json *.js node_modules template "
   },
   "author": "Contentstack",
   "license": "MIT",
