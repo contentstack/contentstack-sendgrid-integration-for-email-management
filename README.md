@@ -15,4 +15,4 @@ In this guide, we will discuss how we can integrate Contentstack with SendGrid t
 
 Read Contentstack [docs](https://www.contentstack.com/docs/)
 
-Read Guide [Contentstack SendGrid Integration For Email Management](#)
+Read Guide [Contentstack SendGrid Integration For Email Management](https://www.contentstack.com/docs/developers/how-to-guides/setting-up-an-email-management-system-with-contentstack-and-sendgrid/)
